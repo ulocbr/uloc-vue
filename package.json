@@ -2,8 +2,9 @@
   "name": "uloc-vue",
   "version": "0.0.1",
   "description": "An Frontend Framework for Desktop Applications",
-  "module": "src/uloc.esm.js",
+  "module": "dist/uloc.esm.js",
   "main": "dist/uloc.esm.js",
+  "jsnext:main": "dist/uloc.esm.js",
   "files": [
     "dist",
     "lang",
