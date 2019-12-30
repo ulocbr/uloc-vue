@@ -1,0 +1,90 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+// -------------------------
+
+
+
+for $heading, $value in $h-tags
+  {$heading}
+    font-size: $value.size
+    font-weight: $value.weight
+    if $value.line-height
+      line-height: $value.line-height
+    if $value.letter-spacing
+      letter-spacing: $value.letter-spacing
+    @media screen and (max-width $breakpoint-sm)
+      font-size: ($value.size * .6)
+
+for $heading, $value in $headings
+  .u-{$heading}-opacity
+    opacity: $value.opacity
+  .u-{$heading}
+    font-size: $value.size
+    font-weight: $value.weight
+    if $value.line-height
+      line-height: $value.line-height
+    if $value.letter-spacing
+      letter-spacing: $value.letter-spacing
+
+p
+  margin: 0 0 $spaces.md.y
+
+.caption
+  color $grey-9
+  letter-spacing 0
+  line-height 24px
+  padding 0
+  font-weight 300
+
+.uppercase
+  text-transform uppercase
+.lowercase
+  text-transform lowercase
+.capitalize
+  text-transform capitalize
+
+// Emphasis & misc
+// -------------------------
+
+// Ex: (12px small font / 14px base font) * 100% = about 85%
+small,
+.small
+  font-size floor(100% * $font-size-xs / $font-size-base)
+
+// Lists
+// -------------------------
+
+// Unordered and Ordered lists
+ul,
+ol
+  margin-top 0
+  margin-bottom 0 // ($line-height-computed / 2)
+  ul,
+  ol
+    margin-bottom 0
+
+// List options
+
+// Unstyled keeps list items block level, just removes default browser padding and list-style
+.list-inline,
+.list-unstyled
+  padding-left 0
+  list-style none
+
+// Inline turns list items into inline-block
+.list-inline
+  margin-left -5px
+
+  > li
+    display inline-block
+    padding-left 5px
+    padding-right 5px
+
+.initialism
+  font-size 90%
+  text-transform uppercase
+
