@@ -45,7 +45,7 @@ const builds = [
         input: resolve(`src/index.js`)
       },
       output: {
-        file: resolve(`dist/index.esm.js`),
+        file: resolve(`dist/uloc.esm.js`),
         format: 'es'
       }
     },
@@ -57,7 +57,7 @@ const builds = [
         input: resolve(`src/index.js`)
       },
       output: {
-        file: resolve(`dist/index.common.js`),
+        file: resolve(`dist/uloc.common.js`),
         format: 'cjs'
       }
     },
