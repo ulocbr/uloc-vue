@@ -157,6 +157,9 @@ ShortKey.keyDown = (pKey) => {
 if (process && process.env && process.env.NODE_ENV !== 'test') {
   ;(function () {
     document.addEventListener('keydown', (pKey) => {
+      if (checkDisabledShortKey()) {
+        return
+      }
       const decodedKey = ShortKey.decodeKey(pKey)
       // Check avoidable elements
       if (availableElement(decodedKey)) {
@@ -174,6 +177,9 @@ if (process && process.env && process.env.NODE_ENV !== 'test') {
     }, true)
 
     document.addEventListener('keyup', (pKey) => {
+      if (checkDisabledShortKey()) {
+        return
+      }
       const decodedKey = ShortKey.decodeKey(pKey)
       if (availableElement(decodedKey)) {
         pKey.preventDefault()
@@ -206,6 +212,13 @@ const availableElement = (decodedKey) => {
   const objectIsAvoided = !!objAvoided.find(r => r === document.activeElement)
   const filterAvoided = !!(elementAvoided.find(selector => document.activeElement && document.activeElement.matches(selector)))
   return !!mapFunctions[decodedKey] && !(objectIsAvoided || filterAvoided)
+}
+
+const checkDisabledShortKey = () => {
+  if (typeof window.disableShortKey !== 'undefined') {
+    return window.disableShortKey
+  }
+  return false
 }
 
 ShortKey.install = ({Vue, cfg}) => {
