@@ -7836,7 +7836,7 @@ body.with-mixin-fullscreen {
   margin-right: 12px;
 }
 .fullscreen {
-  z-index: 5000;
+  z-index: 15000;
   max-width: 100vw;
   max-height: 100vh;
 }
@@ -12895,7 +12895,7 @@ body.with-loading {
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px rgba(0,0,0,0.14), 0 1px 10px rgba(0,0,0,0.12);
 }
 .modal {
-  z-index: 5000;
+  z-index: 15000;
 }
 [dir] .modal.minimized, [dir] .modal.with-backdrop {
   background: rgba(0,0,0,0.4);
@@ -14916,7 +14916,7 @@ body.desktop .u-tab:hover:before {
 .u-tooltip {
   position: fixed;
   color: #fafafa;
-  z-index: 9000;
+  z-index: 19000;
   overflow-y: auto;
   overflow-x: hidden;
   pointer-events: none;

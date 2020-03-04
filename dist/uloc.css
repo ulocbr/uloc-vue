@@ -6697,7 +6697,7 @@ body.with-mixin-fullscreen {
   margin-left: 12px;
 }
 .fullscreen {
-  z-index: 5000;
+  z-index: 15000;
   border-radius: 0 !important;
   max-width: 100vw;
   max-height: 100vh;
@@ -10819,7 +10819,7 @@ body.with-loading {
   outline: 0;
 }
 .modal {
-  z-index: 5000;
+  z-index: 15000;
 }
 .modal.minimized,
 .modal.with-backdrop {
@@ -12392,7 +12392,7 @@ body.desktop .u-tab:hover:before {
   color: #fafafa;
   background: #747474;
   box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px rgba(0,0,0,0.14), 0 1px 18px rgba(0,0,0,0.12);
-  z-index: 9000;
+  z-index: 19000;
   padding: 10px;
   border-radius: 2px;
   overflow-y: auto;
