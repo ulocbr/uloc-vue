@@ -151,10 +151,10 @@ export default {
       this.container.instances.push(this)
     }
     this.__getPosition()
-    console.log('CREATED-------')
+    /* console.log('CREATED-------')
     console.log('origin', this.originWindow)
     console.log('instanceActive', this.container.instanceActive)
-    console.log('CREATED-------')
+    console.log('CREATED-------') */
   },
   mounted () {
     const container = this.container.$el
@@ -236,10 +236,10 @@ export default {
           this.originWindow.defineActive('desactiveActual')
         })
       }
-      console.log('HIDE-------')
+      /* console.log('HIDE-------')
       console.log('origin', this.originWindow)
       console.log('instanceActive', this.container.instanceActive)
-      console.log('HIDE-------')
+      console.log('HIDE-------') */
       this.__getPosition()
       this.__emit('close', this.wid)
     },
@@ -322,17 +322,17 @@ export default {
           this.container.instanceActive.desactive()
         }
         this.container.instanceActive = this
-        console.log('DEFINE ACTIVE-------')
+        /* console.log('DEFINE ACTIVE-------')
         console.log('origin', this.originWindow)
         console.log('instanceActive', this.container.instanceActive)
-        console.log('DEFINE ACTIVE-------')
+        console.log('DEFINE ACTIVE-------') */
         this.active = true
         if (type === 'desactiveActual') {
           if (!this.$uloc.window.get(this.wid)) {
             return
           }
         }
-        console.log('ALLONS-Y!', typeof this.wid, this.wid, this.$uloc.window.get(this.wid))
+        // console.log('ALLONS-Y!', typeof this.wid, this.wid, this.$uloc.window.get(this.wid))
 
         this.$uloc.window.get(this.wid) && this.__emit('active', this.wid)
       }
