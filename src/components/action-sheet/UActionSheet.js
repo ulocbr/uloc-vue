@@ -127,12 +127,12 @@ export default {
           }
         }, this.grid
           ? [
-            action.icon ? h(UIcon, { props: { name: action.icon, color: action.color } }) : null,
+            action.icon ? h(UIcon, { props: { name: action.icon, color: action.color, type: action.iconType, iconStyle: action.iconStyle } }) : null,
             action.avatar ? h('img', { domProps: { src: action.avatar }, staticClass: 'avatar' }) : null,
             h('span', [ action.label ])
           ]
           : [
-            h(UItemSide, { props: { icon: action.icon, color: action.color, avatar: action.avatar } }),
+            h(UItemSide, { props: { icon: action.icon, color: action.color, avatar: action.avatar, type: action.iconType, iconStyle: action.iconStyle } }),
             h(UItemMain, { props: { inset: true, label: action.label } })
           ]
         )
