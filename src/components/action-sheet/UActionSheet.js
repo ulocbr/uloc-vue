@@ -132,7 +132,7 @@ export default {
             h('span', [ action.label ])
           ]
           : [
-            h(UItemSide, { props: { icon: action.icon, color: action.color, avatar: action.avatar, type: action.iconType, iconStyle: action.iconStyle } }),
+            h(UItemSide, { props: { icon: action.icon, color: action.color, avatar: action.avatar, iconType: action.iconType, iconStyle: action.iconStyle } }),
             h(UItemMain, { props: { inset: true, label: action.label } })
           ]
         )
