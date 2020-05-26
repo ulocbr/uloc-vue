@@ -6,6 +6,8 @@ export default {
     right: Boolean,
 
     icon: String,
+    iconType: String,
+    iconStyle: String,
     letter: {
       type: String,
       validator: v => v.length === 1
@@ -64,7 +66,7 @@ export default {
       if (this.icon) {
         child = h(UIcon, {
           'class': this.inverted ? null : this.typeClasses,
-          props: { name: this.icon }
+          props: { name: this.icon, type: this.iconType, iconStyle: this.iconStyle }
         })
 
         if (this.inverted) {
