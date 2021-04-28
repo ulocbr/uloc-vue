@@ -19,6 +19,10 @@ export default {
     popoverSelf: {
       type: String,
       default: 'top right'
+    },
+    popoverOffset: {
+      type: Array,
+      default: [0, 0]
     }
   },
   data () {
@@ -42,7 +46,8 @@ export default {
             fit: true,
             anchorClick: !this.split,
             anchor: this.popoverAnchor,
-            self: this.popoverSelf
+            self: this.popoverSelf,
+            offset: this.popoverOffset
           },
           'class': this.contentClass,
           style: this.contentStyle,

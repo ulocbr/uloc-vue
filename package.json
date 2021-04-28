@@ -1,6 +1,6 @@
 {
   "name": "uloc-vue",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An Frontend Framework for Desktop Applications",
   "module": "dist/uloc.esm.js",
   "main": "dist/uloc.esm.js",
