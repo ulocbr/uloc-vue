@@ -21,8 +21,7 @@ export default {
       default: 'top right'
     },
     popoverOffset: {
-      type: Array,
-      default: () => [0, 0]
+      type: Array
     }
   },
   data () {
