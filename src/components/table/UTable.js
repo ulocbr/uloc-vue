@@ -52,6 +52,7 @@ export default {
       default: 'horizontal',
       validator: v => ['horizontal', 'vertical', 'cell', 'none'].includes(v)
     },
+    hideNoResultsLabel: Boolean,
     noDataLabel: String,
     noResultsLabel: String,
     loadingLabel: String,
@@ -111,7 +112,7 @@ export default {
         : this.computedData.rowsNumber
     },
     nothingToDisplay () {
-      return this.computedRows.length === 0
+      return !this.hideNoResultsLabel && this.computedRows.length === 0
     },
     isServerSide () {
       return this.computedPagination.rowsNumber !== void 0
