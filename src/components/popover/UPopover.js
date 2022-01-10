@@ -46,6 +46,10 @@ export default {
       type: Boolean,
       default: false
     },
+    disableCloseOnClickOutside: {
+      type: Boolean,
+      default: false
+    },
     hoverDelay: Number
   },
   watch: {
@@ -125,7 +129,7 @@ export default {
         this.$refs.content.focus()
       }
       this.timer = setTimeout(() => {
-        document.body.addEventListener('click', this.__bodyHide, true)
+        !this.disableCloseOnClickOutside && document.body.addEventListener('click', this.__bodyHide, true)
         if (this.hover) {
           document.body.addEventListener('mousemove', this.mousemove, true)
         }
@@ -153,7 +157,7 @@ export default {
       clearTimeout(this.timerMousemove)
       clearTimeout(this.timerOverDelay)
 
-      document.body.removeEventListener('click', this.__bodyHide, true)
+      !this.disableCloseOnClickOutside && document.body.removeEventListener('click', this.__bodyHide, true)
       document.body.removeEventListener('mousemove', this.mousemove, true)
       document.body.removeEventListener('touchstart', this.__bodyHide, true)
       this.scrollTarget.removeEventListener('scroll', this.__updatePosition, listenOpts.passive)

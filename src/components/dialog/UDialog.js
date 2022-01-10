@@ -24,6 +24,7 @@ export default {
     noEscDismiss: Boolean,
     noRefocus: Boolean,
     position: String,
+    dialogClass: String,
     color: {
       type: String,
       default: 'primary'
