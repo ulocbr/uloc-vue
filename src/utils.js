@@ -14,6 +14,7 @@ import openURL from './utils/open-url.js'
 import scroll from './utils/scroll.js'
 import throttle from './utils/throttle.js'
 import uid from './utils/uid.js'
+import EscapeKey from './utils/escape-key.js'
 
 function noop () {}
 
@@ -34,5 +35,6 @@ export {
   openURL,
   scroll,
   throttle,
-  uid
+  uid,
+  EscapeKey
 }
