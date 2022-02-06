@@ -40,6 +40,10 @@ export default {
       type: Boolean,
       default: true
     },
+    closeOnEsc: {
+      type: Boolean,
+      default: true
+    },
     backdrop: {
       type: Boolean,
       default: false
@@ -229,8 +233,8 @@ export default {
           this.container.instanceActive = null
         }
       }
-      EscapeKey.findAndPop(this.closeOnEscapeKey)
-      EscapeKey.enable()
+      this.closeOnEsc && EscapeKey.findAndPop(this.closeOnEscapeKey)
+      this.closeOnEsc && EscapeKey.enable()
       if (this.originWindow) {
         this.$nextTick(() => {
           this.originWindow.defineActive('desactiveActual')
@@ -336,17 +340,17 @@ export default {
 
         this.$uloc.window.get(this.wid) && this.__emit('active', this.wid)
       }
-      EscapeKey.findAndPop(this.closeOnEscapeKey)
-      EscapeKey.register(this.closeOnEscapeKey)
-      !this.close && EscapeKey.disable()
+      this.closeOnEsc && EscapeKey.findAndPop(this.closeOnEscapeKey)
+      this.closeOnEsc && EscapeKey.register(this.closeOnEscapeKey)
+      !this.close && this.closeOnEsc && EscapeKey.disable()
     },
     desactive () {
       this.active = false
       this.container.instanceActive = this.originWindow
       this.originWindow = null
       // EscapeKey.pop()
-      EscapeKey.findAndPop(this.closeOnEscapeKey)
-      EscapeKey.enable()
+      this.closeOnEsc && EscapeKey.findAndPop(this.closeOnEscapeKey)
+      this.closeOnEsc && EscapeKey.enable()
       this.$uloc.window.get(this.wid) && this.__emit('desactive', this.wid)
     },
     closeOnEscapeKey () {
