@@ -1,9 +1,9 @@
 /*!
- * Uloc Framework v0.0.16
+ * Uloc Framework v0.0.17
  * (c) 2018 Tiago Felipe
  * Released under the MIT License.
  */
-@import 'https://static.suporteleiloes.com.br/assets/material/material-icons.css';
-@import 'https://static.suporteleiloes.com.br/assets/fontawesome/all.css';
+@import './assets/vendor/material/material-icons.css';
+@import './assets/vendor/fontawesome/all.css';
 @import './assets/fonts/roboto/roboto.css';
 @import './assets/fonts/avenir-next/avenir.css';
